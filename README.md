@@ -1,5 +1,18 @@
-# :zap: latex-w17-workshop :zap:
+# :zap: latex-sp17-intro-workshop :zap:
 Source files, links, and references for the 2017 Winter Quarter Introductory Latex Workshop.
+
+# Topics Covered
+* Why choose Latex
+	* Demos of actual LaTeX docs 
+* Compiling a minimal document
+    * What is an environment? 
+* Titles and sections
+* The Preamble
+* Sections and subsections
+* Document Classes
+* Math Examples
+    * Inline, equation, align environments 
+* How to use packages
 
 # Getting Started
 1. Make sure that you have an account on [ShareLatex.com](https://www.sharelatex.com)
@@ -14,11 +27,6 @@ All of the tools we discussed are also linked at the bottom.
 
 # Live Code
 - [Completed Live Code Document](https://www.sharelatex.com/project/58a66588dc437fe62c880e91)
-
-# Documents with Subdocuments:
-- [Using the Input Command](https://www.sharelatex.com/project/58a65168dc437fe62c880b8d)
-- [Using the Subfile Package](https://www.sharelatex.com/project/58a666ebdc437fe62c880ef0)
-- [Using the Standalone Package](https://www.sharelatex.com/project/58a667badc437fe62c880f1e) :fire: :fire: :fire:
 
 # Additional References
 - Minimal documents, writing theorems/proofs, structuring your document, advanced environments and more: 
