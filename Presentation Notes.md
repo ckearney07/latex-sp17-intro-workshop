@@ -1,25 +1,13 @@
-# Latex Workshop Notes
+# Introductory Latex Workshop Notes 
 
 These notes detail the process we will be going through in order to write and compile incrementally more complex LaTeX documents during the workshop.
 
-Pause between each numbered section to ensure that everyone is caught up. Try to take a break at the 1 hour mark.
+(Pause between each numbered section to ensure that everyone is caught up. Aim to take about two 15 minute breaks for questions!)
 
-## Useful Links
-
-* General Purpose
-    * [TexZilla](https://fred-wang.github.io/TeXZilla/): A REPL for Math expressions
-    * [Detexify](http://detexify.kirelabs.org/classify.html): Find commands for unknown symbols.
-    * [Equation Editor](https://www.codecogs.com/latex/eqneditor.php) GUI for generating code for more complicated expressions
-    * [Table Generator](http://www.tablesgenerator.com/): GUI for designing tables that generates copy-pastable source code
-    * [CTAN](https://www.ctan.org/pkg): Hosts Latex packages, descriptions, and downloads.
-* For installing/using Latex on your local machine:
-    * [MikTeX](https://miktex.org/): A Latex "distribution", includes compiler and some packages
-    * [Texmaker](http://www.xm1math.net/texmaker/): A Latex IDE
-* [Online Markdown Editor](https://jbt.github.io/markdown-editor): The markdown editor used for this document
 
 ## Preliminaries
 - Create an account on [Sharelatex.com](https://www.sharelatex.com/) and log in to Projects page
-- Navigate to the Github Repository: [Repository Link](https://github.com/UCSD-SUMS/latex-w17-workshop)
+- Navigate to the Github Repository: [Repository Link](https://github.com/UCSD-SUMS/latex-sp17-intro-workshop)
 
 
 # 0: Motivation
@@ -39,6 +27,12 @@ Pause between each numbered section to ensure that everyone is caught up. Try to
     - beamer.pdf
     - IEEEtran.pdf
   - More intricate examples: [Overleaf Gallery](https://www.overleaf.com/gallery)
+      - Briefly look at these categories:
+          - Academic Journal
+          - Book
+          - Resume
+          - Poster
+          - Presentation
 
 ------
 # 1: Compile a Basic Document
@@ -52,7 +46,7 @@ From blank document, add:
 
 Document content goes here!
 
-We can't just say y = mx + b.
+We cant just say y = mx + b.
 
 Use inline math with $y = mx + b$.
 
@@ -148,7 +142,7 @@ Document content goes here!
        - We'll add a few packages of our own later on
 
 ------
-# 3: Document Structure
+# 3: Document Structure + Do Some Mathematics!
 
 ## Overview
 To the existing code, add:
@@ -171,8 +165,13 @@ To the existing code, add:
 ## Talking Points
 
 - Document Classes
+    - There are classes other than "article" (which we won't use here)
+    - Each provides some structural commands
+        - Article uses `section`, `subsection`, `subsubsection`, etc
+        - Books (for example) might use `chapter` or something instead
 - Formatting Commands
   - Line breaks
+    - Show title without line breaks - too big!
     - Insert manual line break into title
   - New page
     - Insert newpage just before `\maketitle`
@@ -191,14 +190,38 @@ To the existing code, add:
     - Rather than telling you all of the symbols, I'll provide some representatives from each kind of "class" or type of symbol. (Similar symbols have similar syntax!)
     - Demo [TexZilla](https://fred-wang.github.io/TeXZilla/) in Firefox
       - Show several greek letters and equations
+        - $\pi, \sigma, \delta, \psi, \gamma$
       - Show capitalizing greek letters to get capitals
-      - Copy/paste `\sum` from earlier into it
-      - Show \lim operator
+        - $\Pi, \Sigma, \Delta, \Psi, \Gamma$
+      - Show sum, infinity, frac
+        - $$\sum_{k=0}^\infty k = -\frac{1}{12}$$
+      - Show \lim operator and 'implies'
+        - e.g. $f$ is continuous if: 
+          $$\lim_{n\rightarrow\infty} x_n = x \Rightarrow \lim_{n\rightarrow\infty} f(x_n) = f(x)$$
       - Show swapping `\sum` for `\int`
+        $$\sum_{k=0}^\infty f(x_k) \Delta x_k$$
+        $$ = \lim_{n\rightarrow\infty}\sum_{k=0}^n f(x_k) \Delta x_k$$
+        $$ = \int_{a}^b f(x) dx$$
       - Show operators: `sqrt, sin, cos`
+        - $\sqrt{x}, \sin{x}, \cos{x}$
       - Show using `\text` for unknown functions
+        - $\text{max}(a,b), \text{floor}(x)$
       - Show building derivative out of `\frac`, and `\partial`
+        - $$ \frac{d}{dx}, \frac{\partial}{\partial x}, \frac{\partial^2}{\partial x\partial y}$$
       - Show basic array/matrix and how alignment symbol/newline works
+$$
+M=
+  \left[ {
+      \begin{array}{ccc}
+       1 & \alpha_1 & \alpha_1^2 \\
+       1 & \alpha_2 & \alpha_2^2 \\
+       1 & \alpha_3 & \alpha_3^2 \\
+      \end{array}
+  } \right]
+$$
+      - Math break - anyone know what matrices of this form are called?
+        - Vandermonde, nice formula for determinant: $$\det(M) = \prod_{(i,j)} (\alpha_i - \alpha_j)$$
+        - Used in polynomial interpolation, very useful for error correcting codes!
       - Show QED
       	- Note: this is not default! It's provided by an AMS package, which we'll see momentarily
     - Demo [Detexify](http://detexify.kirelabs.org/classify.html)
@@ -438,3 +461,16 @@ A large equation $$f(x) = a^x$$
 	- **View the subfiles project** 
 - Standalone Package
 	- **View the standalone project**
+
+## Useful Links
+
+* General Purpose
+    * [TexZilla](https://fred-wang.github.io/TeXZilla/): A REPL for Math expressions
+    * [Detexify](http://detexify.kirelabs.org/classify.html): Find commands for unknown symbols.
+    * [Equation Editor](https://www.codecogs.com/latex/eqneditor.php) GUI for generating code for more complicated expressions
+    * [Table Generator](http://www.tablesgenerator.com/): GUI for designing tables that generates copy-pastable source code
+    * [CTAN](https://www.ctan.org/pkg): Hosts Latex packages, descriptions, and downloads.
+* For installing/using Latex on your local machine:
+    * [MikTeX](https://miktex.org/): A Latex "distribution", includes compiler and some packages
+    * [Texmaker](http://www.xm1math.net/texmaker/): A Latex IDE
+* [Online Markdown Editor](https://jbt.github.io/markdown-editor): The markdown editor used for this document
