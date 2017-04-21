@@ -1,6 +1,8 @@
 # :zap: latex-sp17-intro-workshop :zap:
 Source files, links, and references for the 2017 Winter Quarter Introductory Latex Workshop.
 
+If you haven't already, please sign in at [https://docs.google.com/forms/d/e/1FAIpQLSe0dJ0tWM5b2KOptAgh_NweLZxhFEqs3NVvFxRdEY4TeZVx1A/viewform](https://docs.google.com/forms/d/e/1FAIpQLSe0dJ0tWM5b2KOptAgh_NweLZxhFEqs3NVvFxRdEY4TeZVx1A/viewform)
+
 # Description
 Latex is a markup language, like HTML, that gives you a way to type up
 mathematical documents that looks clean and professional.
