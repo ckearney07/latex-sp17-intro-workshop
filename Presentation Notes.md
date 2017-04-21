@@ -23,9 +23,9 @@ These notes detail the process we will be going through in order to write and co
   - [Plus it looks way better :) ]
 - But what can you *do* with Latex?
   - View simple PDF Demos:
-    - article.pdf
-    - beamer.pdf
-    - IEEEtran.pdf
+    - [article.pdf](https://github.com/UCSD-SUMS/latex-sp17-intro-workshop/blob/master/Example%20Documents/article.pdf)
+    - [beamer.pdf](https://github.com/UCSD-SUMS/latex-sp17-intro-workshop/blob/master/Example%20Documents/beamer.pdf)
+    - [IEEEtran.pdf](https://github.com/UCSD-SUMS/latex-sp17-intro-workshop/blob/master/Example%20Documents/IEEEtran.pdf)
   - More intricate examples: [Overleaf Gallery](https://www.overleaf.com/gallery)
       - Briefly look at these categories:
           - Academic Journal
@@ -92,6 +92,8 @@ Equation math is $$y = mx + b$$
       - Try typing in $y = mx + b$ and compile
       - Try instead $y = mx$ + b to see the difference
       - Try using block-level math with $$y = mx + b$$
+      	- **Surround $$ with text to show automatic line break**
+	- This reiterates the point - we tell Latex the _structure_ we expect, it takes care of the formatting (mostly)
       - **Show that $Typing in math mode$ doesn't work**
 - What about applying special formatting to your text?
    - Demonstrate `\textbf{}, \textit{}, \underline{}` environments on sample text content
@@ -222,8 +224,10 @@ $$
       - Math break - anyone know what matrices of this form are called?
         - Vandermonde, nice formula for determinant: $$\det(M) = \prod_{(i,j)} (\alpha_i - \alpha_j)$$
         - Used in polynomial interpolation, very useful for error correcting codes!
-      - Show QED
-      	- Note: this is not default! It's provided by an AMS package, which we'll see momentarily
+      - Show end of proof symbols
+      	- Latex doesn't have anything, so look it up on Detxify (try drawing a square)
+	- Show importing package
+      	- $\Box, \blacksquare$
     - Demo [Detexify](http://detexify.kirelabs.org/classify.html)
       - Show searching for other greek letters and operators
     - Demo [Equation Editor](https://www.codecogs.com/latex/eqneditor.php)
@@ -312,21 +316,6 @@ See Equation~\ref{eu_eqn}
   - Note: on some Latex distributions, you may need to compile *twice* to get references to work
   - **Demonstrate `equation*`**
   - **Demonstrate `\boxed`**
-  
-- Footnotes
-  - A standard feature, but latex lets you write your footnotes right along with your actual content
-  - Of course, when it's displayed, it's at the bottom of the page as usual
-  - **Insert code for `\footnote`**
-  - You can also reference them just like equations
-  - **Insert code for `\ref`**
-  
-- Bibliography
-  - Another standard feature - you define it in its own environment at the end of the document, add entries and give them custom labels/names, then you can reference it anywhere else by that custom name
-  - **Insert `\begin{bibliography}, \bibitem{}` and compile**
-  - **Demonstrate `\cite` command**
-  - There are many tools for managing bilbiographies through Latex - the most popular one is Bibtex
-    - There is a bit of a learning curve to this tool, usually only worth diving into it for books, research projects, theses, or lecture notes with *many* references 
-    - Most journals available online export Bibtex-compatible files, which you can just put in a directory and have our bibliography auto-populated
 
 Save this document as your template!
 
@@ -358,8 +347,7 @@ Do this in a new project! Copy-paste most things to emphasize that some of these
 ## Talking Points
 
 - We've built a pretty fully-featured document so far. But since these last few bits are slightly more complex, we'll do it in a new project.
-- Setting up the new project:
-  - **Start a new blank project**
+- adding the image
   - Search Google for an image (png or jpg preferably), download it, then upload it into your project
   	- I chose the term "homotopy" and got 
 ![Image of Yaktocat](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Homotopy_of_pointed_circle_maps.png/220px-Homotopy_of_pointed_circle_maps.png)
@@ -391,76 +379,6 @@ Do this in a new project! Copy-paste most things to emphasize that some of these
   - **Do not live code, just show diagram.tex after it's compiled**
 
 ------
-# 6: Managing Large Documents or Projects
-
-Code up the "input" option, but only demonstrate the others - there is too much boilerplate in those to live code.
-
-## Overview
-
-**main.tex**
-```latex
-\documentclass{article}
-
-\title{This is a workshop}
-\author{Zack Garza}
-
-\begin{document}
-
-\maketitle
-
-\section{Lecture 1}
-\input{"lecture1.tex"}
-
-\section{Lecture 2}
-\input{"lecture2.tex"}
-
-\end{document}
-```
-
-**lecture1.tex**
-```latex
-Notes: $y = mx + b$
-```
-
-**lecture2.tex**
-```latex
-A large equation $$f(x) = a^x$$
-```
-
-## Talking Points
-- Why use documents and subdocuments?
-	- Invaluable for bigger project - e.g. break thesis/dissertation or book into individual chapters or sections
-	- Can work on individual parts without breaking the main document (useful when collaborating)
-- **Add a blank file: lecture1.tex**
-- **Add a blank file: lecture2.tex**
-- Setting up directory structure
-- 3 major options, in roughly increasing order of complexity
-  - Input Command -  **Uses `\input` command**
-  	- Easiest! Built in, so no external packages.
-  	- Useful when you just want to break your document up into smaller pieces
-  	- The smaller pieces are not full latex documents though, and will not compile
-  - Subfiles Package - **Uses `\subfile` command**
-  	- A little more complex. 
-  	- Documents will now compile on their own, but they're not pretty
-  		- But you can still check that your syntax is right before including!
-  	- Subdocuments must inherit the preamble from the main document
-  	- This means if you use extra packages/commands/tweaks in the subdocuments, you have to remember to put them in the main doc to get them to "stick"
-  - Standalone Package - **Uses `\import` command**
-  	- Most complex.
-  	- Best option for big or long-term projects
-  	- Best option for modularity and reusability of entire sections
-  	- Each subdocument is a **complete document** on it's own, with it's own preamble, packages, commands, everything!
-  		- So you can compile the subdocument and know that what you see is almost surely what it will look like in the larger main document
-    	- Makes it easy to hone your section until it's perfect, and keeps packages linked with files that actually use them.
-
-- Input Command:
-	- **Insert sections and inputs into main.tex**
-	- **Insert content into lecture1 and lexture2**
-	- **Compile main.tex**
-- Subfiles Package
-	- **View the subfiles project** 
-- Standalone Package
-	- **View the standalone project**
 
 ## Useful Links
 
