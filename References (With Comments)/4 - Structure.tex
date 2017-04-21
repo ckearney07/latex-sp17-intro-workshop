@@ -1,0 +1,67 @@
+% Each class has a number of options you can specify.
+% Common options might include font size, number of columns, margins, type of paper, etc
+\documentclass[11pt,twoside,a4paper]{article}
+
+% There are also many, many classes to choose from. (See slides for example output)
+% Each one provides a different default styling, and occasionally new commands you can use
+% to further customize your formatting.
+%\documentclass[]{IEEEtran}
+%\documentclass[]{proc}
+%\documentclass[]{report}
+%\documentclass[]{book}
+%\documentclass[]{slides}
+%\documentclass[]{memoir}
+%\documentclass[]{letter}
+%\documentclass[]{beamer}
+
+% Here, we'll set up some variables that the article class uses.
+\author{Gerolamo Cardano}
+
+% If you don't specify a date, it will just use today's date.
+\date{March 14, 1592}\
+
+% You can use arbitrary LaTex markup inside of these commands.
+% Here we're using a command to generate
+% text that will be used for a title section, and inserting a manual line break.
+\title{A \LaTeX Workshop \\ for All Skill Levels}
+
+% Later on, we'll call a command to make a title section (or even a title page)
+% which will use these variables.
+ 
+% The document is set up, so now we'll start writing actual content.
+\begin{document}
+
+% This command just gives us a nicely formatted title, using the variables we set earlier.
+\maketitle
+
+% Most document classes expect your content to be broken up into logical chunks. For the article
+% class, it's sections, subsections, and so on.
+% (For a book, you may use "chapter" commands and so on.)
+\section{Introduction}
+Here, you can just type normal text.
+
+Create new paragraphs by pressing Enter twice.
+
+% Notice that the compiler figures out the numbering for you
+\section{Main Content}
+The Latex engine also takes care of numbering your sections automatically. 
+
+    % And the numbering is hierarchical.
+    \subsection{Mathematics}
+
+        \subsubsection{Inline Math}
+
+        Things like $x+y = z$ or $f(x)=ax^2 + bx + c$ is rendered right along with your text.
+
+        \subsubsection{Equations}
+        You can also do full equations on their own lines such as $$ \sum_{i=0}^\infty i = -\frac{1}{12} $$.
+
+    \subsection{Wrap Up}
+    That's all for this section.
+
+
+\section{Filler Text}
+More document content!
+
+
+\end{document}
