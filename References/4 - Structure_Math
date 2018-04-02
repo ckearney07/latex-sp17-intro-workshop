@@ -8,11 +8,16 @@
 \begin{document}
 
 \maketitle
+\newpage
+
+\tableofcontents
+\newpage
 
 \section{Introduction}
 Here, you can just type normal text.
 
 Create new paragraphs by pressing Enter twice.
+\newpage
 
 \section{Main Content}
 The Latex engine also takes care of numbering your sections automatically. 
